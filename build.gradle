@@ -45,25 +45,24 @@ minecraft {
 }
 
 repositories {
-	maven {
-		// location of a maven mirror for JEI files, as a fallback
-		name = "ModMaven"
-		url = "modmaven.k-4u.nl"
-	}
+    maven {
+        name 'jei'
+        url 'http://dvs1.progwml6.com/files/maven'
+    }
+    maven {
+        name 'Curse Maven' // Baubles + Thaumcraft
+        url 'http://cursemaven.com'
+    }
 	maven {
         name = "thiakil"
         url = "http://maven.thiakil.com"
 	}
-    maven {
-        name 'Curseforge Maven' // Baubles + Thaumcraft
-        url 'http://minecraft.curseforge.com/api/maven/'
-    }
 }
 
 dependencies {
-    deobfCompile "baubles:Baubles:${baubles_mc_version}:${baubles_version}"
-    deobfCompile "thaumcraft:Thaumcraft:${mc_version}:${thaumcraft_version}"
-	deobfCompile "mezz.jei:jei_${mc_version}:${jei_version}"
+    deobfCompile "mezz.jei:jei_1.12.2:4.16.1.302"
+    deobfCompile 'curse.maven:baubles-227083:2518667'
+    deobfCompile 'curse.maven:thaumcraft-223628:2629023'
 }
 
 processResources
